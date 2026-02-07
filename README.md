@@ -1,2 +1,4 @@
 # SAUrted
-SAU Resource Hub FWD project
+Because your study material should be sorted.
+
+~SAU Resource Hub FWD project
