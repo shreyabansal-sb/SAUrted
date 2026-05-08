@@ -48,6 +48,7 @@ const papersData = {
           files: [
             { name: "Mid Sem 2026", url: "https://drive.google.com/file/d/1YwfF1GbbLk9QNlhKAe7TTYxnOnq6em-t/view?usp=sharing" },
             { name: "Quiz Mid Sem 2026", url: "https://drive.google.com/file/d/1DmTU1leLPBJ4UZejsUgWiSo6D5R0muf7/view?usp=sharing" },
+            { name: "Quiz End Sem 2026", url: "https://drive.google.com/file/d/1KIjIVgPd7EwXAhYUNobdjgeJcmivgk3Q/view?usp=sharing" }
           ]
         },
         {
@@ -62,6 +63,7 @@ const papersData = {
           files: [
             { name: "Mid Sem 2026", url: "https://drive.google.com/file/d/1C-yAjRVT4wtSu8_xF_ifgot8NJEs7rgO/view?usp=sharing" },
             { name: "Quiz Mid Sem 2026", url: "https://drive.google.com/file/d/1PIfJ2fe7mHc0g-RA3LozaY4b5Cw38UJH/view?usp=sharing" },
+            { name: "Quiz End Sem 2026", url: "https://drive.google.com/file/d/10sjb1LjRHE8jvmq4a8DGAFOpGEPEe-Vx/view?usp=sharing" },
           ]
         }, 
         {
@@ -69,6 +71,7 @@ const papersData = {
           files: [
             { name: "Mid Sem 2026", url: "https://drive.google.com/file/d/1o8HfnNprhfyH8wHUBV5CIyqapJUSIufk/view?usp=sharing" },
             { name: "Quiz Mid Sem 2026", url: "https://drive.google.com/file/d/1cbtA93KlxDrUWY3kDOR3Znk4TUHFxvpU/view?usp=sharing" },
+            { name: "Quiz End Sem 2026", url: "https://drive.google.com/file/d/1LoJePDEJxSLTLpBNzZ5KBjDNC964EegK/view?usp=sharing" },
           ]
         },
         {
