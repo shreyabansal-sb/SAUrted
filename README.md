@@ -29,40 +29,52 @@ SAUrted was built to fix that. Instead of hunting through WhatsApp groups, share
 
 ## Live Demo
 
-🔗 [https://your-username.github.io/saurted](https://your-username.github.io/saurted) *(replace with your GitHub Pages URL)*
+🔗 https://shreyabansal-sb.github.io/SAUrted/
 
 ---
 
 ## Features
 
-### 🎯 Smart Filter System
-Year and semester chips are linked — selecting a year automatically disables semesters that don't belong to it (e.g. Year 1 disables Sems 3–8). The paper list updates in real time with no page reloads.
+### ⌨️ Typewriter Hero Animation
+The homepage headline animates in as a typewriter effect with a blinking cursor — built entirely with CSS `@keyframes`, no JavaScript or external libraries required.
+
+### 🎯 Smart Year & Semester Filter
+Papers can be filtered by year and semester using chip-style buttons. Selecting a year automatically disables semesters that don't belong to it (e.g. Year 1 restricts to Sems 1–2). The paper list updates instantly with no page reload.
 
 ### 📂 Expandable Subject Cards
-Papers are grouped by subject in collapsible accordion cards. Each card displays the subject name, year, semester, and number of available files. Clicking a card expands it to reveal all downloadable papers.
+Papers are grouped by subject inside collapsible accordion cards, dynamically generated from the data file. Each card shows the subject name, year, semester, and file count. Clicking expands it to reveal individual papers, each opening in a new tab.
 
-### ⌨️ Typewriter Hero Animation
-The homepage headline uses a pure CSS typewriter animation with a blinking cursor — built entirely with `@keyframes`, no JavaScript or external libraries.
+### 🚫 Empty State Handling
+If no papers exist for a selected filter combination, a "No papers found" message is displayed instead of a blank or broken layout.
 
-### 📱 Fully Responsive Layout
-The site is designed to work across all screen sizes — desktop, tablet, mobile, and very small phones (≤380px). Every section — navbar, filter chips, cards, buttons, and forms — has dedicated responsive breakpoints.
+### 📝 Feedback Form with Validation
+The Feedback page includes a form with name, email, feedback type (broken link, missing paper, suggestion, other), and a message field — all with HTML5 required-field validation. On successful submission, a confirmation alert appears and the form resets automatically.
 
-### 📝 Feedback Form
-A structured feedback form lets students report broken links, missing papers, or submit suggestions. Categories include broken link, missing paper, suggestion, and other. Submissions trigger a confirmation alert and reset the form.
+### 📧 Clickable Mail Link
+The footer email (`saurted@gmail.com`) is a `mailto:` link on every page — clicking it opens the user's default mail client directly without needing to copy the address.
 
-### 📧 Mailto Link
-The footer email (`saurted@gmail.com`) uses a `mailto:` link — clicking it opens the user's default mail client directly, making it easy to reach out without copying the address manually.
+### 📤 Paper Submission via Google Form
+Students can contribute missing papers through a Google Form, linked in the navbar, the homepage hero section, and the About page — making the platform community-driven and continuously growing.
 
-### 🧩 Data-Driven Paper Management
-All paper data is stored in a single `data.js` file, organised by year and semester. Adding new subjects or papers requires no changes to any HTML or CSS — just update the data file.
+### 📋 Site-wide Announcement Banner
+A banner strip at the top of every page displays timely messages such as exam season reminders, keeping students informed without disrupting the main layout.
 
-### ✨ UI & Interaction Details
-- Smooth hover transitions on nav links, buttons, and file rows
-- Animated underline on navigation items using CSS `::after` pseudo-elements
-- Chevron icon rotates 180° when a subject card is opened
-- `Open ↗` label fades in on file row hover
-- Logo has a glow, scale, and letter-spacing animation on hover
-- Announcement banner at the top of every page
+### 🖱️ Clickable Logo Navigation
+The SAUrted logo in the navbar functions as a home button on every page, navigating back to `index.html` — implemented consistently across the entire site.
+
+### 🧩 Data-Driven Architecture
+All paper links and metadata live in a single `data.js` file, structured by year and semester. New papers or subjects can be added without touching any HTML or CSS files.
+
+### 📱 Fully Responsive Design
+The entire site adapts across desktop, tablet, mobile, and very small phones (≤380px). Dedicated media query breakpoints at `1024px`, `640px`, and `380px` handle the navbar, filter chips, cards, buttons, forms, and footer at every screen size.
+
+### ✨ Micro-interactions & UI Polish
+- Animated `::after` underline slides in on navbar link hover
+- Logo scales up, glows blue, and widens letter-spacing on hover; presses down on click
+- Chevron icon rotates 180° when a subject card is expanded
+- `Open ↗` label fades in on file row hover (hidden on mobile to keep it clean)
+- All buttons lift with a directional shadow on hover and press down on click
+- Input and textarea fields highlight with a blue focus ring on interaction
 
 ---
 
