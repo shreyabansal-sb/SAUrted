@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0f14;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ANNOUNCE */
+.announce {
+  background: #0d1f3c;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  color: #aaaaaa;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 32px;
+}
+
+.sau {
+  color: #0d469a;
+  text-decoration: underline;
+  text-decoration-color: #0d469a;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.submit {
+  color: #4d8fd4;
+}
+
+/* HERO */
+.banner {
+  padding: 80px 40px;
+}
+
+.banner h1 {
+  font-size: 60px;
+}
+
+.banner h1 span {
+  color: #0d469a;
+}
+
+.banner p {
+  margin: 15px 0;
+  color: #888;
+}
+
+.banner-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.banner-btns button,
+.banner-btns a {
+  padding: 17px 40px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.banner-btns button {
+  background: #0d469a;
+  color: white;
+}
+
+.banner-btns a {
+  background: hsl(0, 0%, 14%);
+  color: hsl(0, 0%, 80%);
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  color: #4d8fd4;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==================== PAPERS PAGE ==================== */
+
+.papers {
+  padding: 40px;
+  flex: 1;
+}
+
+.papers h1 {
+  margin-bottom: 20px;
+}
+
+.filters {
+  margin-bottom: 30px;
+}
+
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filter-group p {
+  font-size: 17px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #111111;
+  color: #aaaaaa;
+  cursor: pointer;
+  font-size: 12px;
+  transition: color 0.15s;
+}
+
+.chip.active {
+  background: #0d469a;
+  color: white;
+}
+
+.chip:hover:not(.disabled):not(.active) {
+  color: #4d8fd4;
+}
+
+.chip.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+
+/* ---- SUBJECT CARDS ---- */
+
+#subjects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subject-card {
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;        /* so files-list clips nicely */
+  border: 1px solid #1a1a1a;
+}
+
+.subject-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  user-select: none;       /* stops accidental text selection on click */
+  transition: background 0.15s;
+}
+
+.subject-header:hover {
+  background: #181818;
+}
+
+.subject-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.subject-header p {
+  font-size: 11px;
+  color: #666;
+  margin-top: 3px;
+}
+
+.chevron {
+  color: #444;
+  font-size: 18px;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+
+/* Rotate chevron when open */
+.subject-card.open .chevron {
+  transform: rotate(180deg);
+  color: #4d8fd4;
+}
+
+
+/* ---- FILES LIST (hidden until open) ---- */
+
+.files-list {
+  display: none;           /* hidden by default */
+  flex-direction: column;
+  border-top: 1px solid #1e1e1e;
+}
+
+.subject-card.open .files-list {
+  display: flex;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 15px;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 13px;
+  border-bottom: 1px solid #1a1a1a;
+  transition: background 0.15s, color 0.15s;
+}
+
+.file-row:last-child {
+  border-bottom: none;
+}
+
+.file-row:hover {
+  background: #0d1f3c;
+  color: #fff;
+}
+
+.file-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.file-name {
+  flex: 1;
+}
+
+.file-open {
+  font-size: 11px;
+  color: #4d8fd4;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.file-row:hover .file-open {
+  opacity: 1;
+}
+
+/* No results message */
+.no-results {
+  color: #555;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+/*-------------about.html--------------------*/
+.about {
+  padding: 60px 40px;
+}
+
+.about h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  color: #888;
+  margin-bottom: 40px;
+}
+
+.about-block {
+  margin-bottom: 30px;
+}
+
+.about-block h2 {
+  margin-bottom: 10px;
+}
+
+.about-block p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.about-block ul {
+  padding-left: 20px;
+  color: #aaa;
+}
+
+.btnn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #0d469a;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/*--------------------feedback-----------------------------*/
+.contact {
+  padding: 60px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.sub {
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.submit-btn {
+  background: #0d469a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+}
