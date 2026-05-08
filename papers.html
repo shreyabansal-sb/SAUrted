@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SAUrted | Papers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ANNOUNCEMENT -->
+  <div class="announce">
+    <p>End sem season, Stay Prepared!</p>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo" onclick="gotoindex()">
+      <span class="sau">SAU</span>rted
+    </div>
+
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Feedback</a>
+      <a href="https://forms.gle/N9vHCGRrw3EHNPnK7" target="_blank" class="submit">Contribute</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <section class="papers">
+
+    <h1>Browse Papers</h1>
+
+    <!-- FILTERS -->
+    <div class="filters">
+
+      <!-- YEAR -->
+      <div class="filter-group">
+        <p>Year</p>
+        <div class="chips" id="year-chips">
+          <span class="chip active" data-year="all">All</span>
+          <span class="chip" data-year="1">Year 1</span>
+          <span class="chip" data-year="2">Year 2</span>
+          <span class="chip" data-year="3">Year 3</span>
+          <span class="chip" data-year="4">Year 4</span>
+        </div>
+      </div>
+
+      <!-- SEM -->
+      <div class="filter-group">
+        <p>Semester</p>
+        <div class="chips" id="sem-chips">
+          <span class="chip active" data-sem="all">All</span>
+          <span class="chip" data-sem="1">Sem 1</span>
+          <span class="chip" data-sem="2">Sem 2</span>
+          <span class="chip" data-sem="3">Sem 3</span>
+          <span class="chip" data-sem="4">Sem 4</span>
+          <span class="chip" data-sem="5">Sem 5</span>
+          <span class="chip" data-sem="6">Sem 6</span>
+          <span class="chip" data-sem="7">Sem 7</span>
+          <span class="chip" data-sem="8">Sem 8</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="subjects-list"></div>
+
+  </section>
+
+  <footer>
+    <p>Queries and contributions</p><br>
+    <a href="mailto:saurted@gmail.com">saurted@gmail.com</a>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
