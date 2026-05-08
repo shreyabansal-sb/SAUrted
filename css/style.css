@@ -34,6 +34,22 @@ nav {
 .logo {
   font-weight: 900;
   font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.25s ease, text-shadow 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(13, 70, 154, 0.6);
+}
+
+.logo:active {
+  transform: scale(0.97);
+}
+
+.logo:hover .sau {
+  text-decoration-color: #4d8fd4;
 }
 
 .sau {
@@ -42,6 +58,11 @@ nav {
   text-decoration-color: #0d469a;
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.logo:hover .sau {
+  color: #4d8fd4;
 }
 
 .nav-links {
@@ -53,14 +74,35 @@ nav {
   text-decoration: none;
   color: #aaa;
   font-size: 15px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #4d8fd4;
+  transition: width 0.25s ease;
 }
 
 .nav-links a:hover {
   color: #fff;
 }
 
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 .submit {
   color: #4d8fd4;
+}
+
+.submit:hover {
+  color: #82b4e6;
 }
 
 /* HERO */
@@ -70,11 +112,50 @@ nav {
 
 .banner h1 {
   font-size: 60px;
+  margin: 0;
 }
 
-.banner h1 span {
+.blue-text {
   color: #0d469a;
 }
+
+/* TYPING ANIMATION */
+.typing-text {
+  display: inline-block;
+  border-right: 3px solid #0d469a;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(20, end), blink 0.7s infinite;
+  width: fit-content;
+}
+
+.typing-text {
+  display: inline-block;
+  border-right: 3px solid #0d469a;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  max-width: max-content;
+  vertical-align: bottom;
+  animation: typing 3s steps(19, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 .banner p {
   margin: 15px 0;
@@ -94,6 +175,7 @@ nav {
   cursor: pointer;
   text-decoration: none;
   font-size: 17px;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .banner-btns button {
@@ -101,14 +183,34 @@ nav {
   color: white;
 }
 
+.banner-btns button:hover {
+  background: #1257b8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 70, 154, 0.45);
+}
+
+.banner-btns button:active {
+  transform: translateY(0);
+}
+
 .banner-btns a {
   background: hsl(0, 0%, 14%);
   color: hsl(0, 0%, 80%);
 }
 
+.banner-btns a:hover {
+  background: hsl(0, 0%, 20%);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 40px;
+  border-top: 1px solid #222;
   margin-top: auto;
-  padding: 20px;
   text-align: center;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.18);
@@ -192,7 +294,7 @@ footer a:hover {
 .subject-card {
   background: #111;
   border-radius: 8px;
-  overflow: hidden;        /* so files-list clips nicely */
+  overflow: hidden;
   border: 1px solid #1a1a1a;
 }
 
@@ -202,7 +304,7 @@ footer a:hover {
   align-items: center;
   padding: 15px;
   cursor: pointer;
-  user-select: none;       /* stops accidental text selection on click */
+  user-select: none;
   transition: background 0.15s;
 }
 
@@ -228,7 +330,6 @@ footer a:hover {
   line-height: 1;
 }
 
-/* Rotate chevron when open */
 .subject-card.open .chevron {
   transform: rotate(180deg);
   color: #4d8fd4;
@@ -238,7 +339,7 @@ footer a:hover {
 /* ---- FILES LIST (hidden until open) ---- */
 
 .files-list {
-  display: none;           /* hidden by default */
+  display: none;
   flex-direction: column;
   border-top: 1px solid #1e1e1e;
 }
@@ -288,12 +389,12 @@ footer a:hover {
   opacity: 1;
 }
 
-/* No results message */
 .no-results {
   color: #555;
   font-size: 14px;
   padding: 20px 0;
 }
+
 
 /*-------------about.html--------------------*/
 .about {
@@ -336,7 +437,19 @@ footer a:hover {
   color: white;
   text-decoration: none;
   border-radius: 6px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.btnn:hover {
+  background: #1257b8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 70, 154, 0.4);
+}
+
+.btnn:active {
+  transform: translateY(0);
+}
+
 
 /*--------------------feedback-----------------------------*/
 .contact {
@@ -344,7 +457,6 @@ footer a:hover {
   max-width: 800px;
   margin: 0 auto;
 }
-
 
 .sub {
   color: #888;
@@ -355,13 +467,24 @@ footer a:hover {
   margin-bottom: 15px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 10px;
   background: #111;
   border: 1px solid #333;
   color: white;
   border-radius: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0d469a;
+  box-shadow: 0 0 0 3px rgba(13, 70, 154, 0.25);
 }
 
 textarea {
@@ -375,4 +498,143 @@ textarea {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 6px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #1257b8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 70, 154, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  nav {
+    padding: 18px 28px;
+  }
+  .logo {
+    font-size: 28px;
+  }
+  .banner {
+    padding: 60px 28px;
+  }
+  .banner h1 {
+    font-size: 46px;
+  }
+  .papers,
+  .about {
+    padding: 40px 28px;
+  }
+  .about h1 {
+    font-size: 34px;
+  }
+  .contact {
+    padding: 50px 28px;
+  }
+}
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+  .announce {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+    align-items: flex-start;
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .nav-links {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .banner {
+    padding: 40px 20px;
+  }
+  .banner h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  .banner p {
+    font-size: 14px;
+  }
+
+  .banner-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .banner-btns button,
+  .banner-btns a {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .papers,
+  .about {
+    padding: 30px 20px;
+  }
+  .about h1 {
+    font-size: 28px;
+  }
+
+  .filter-group p {
+    font-size: 14px;
+  }
+  .chip {
+    font-size: 11px;
+    padding: 5px 11px;
+  }
+
+  .subject-header {
+    padding: 12px;
+  }
+  .subject-header h3 {
+    font-size: 13px;
+  }
+  .file-row {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .file-open {
+    display: none;
+  }
+
+  .contact {
+    padding: 30px 20px;
+  }
+  .submit-btn {
+    width: 100%;
+  }
+
+  footer {
+    padding: 16px 20px;
+    font-size: 11px;
+  }
+}
+
+/* Very small phones (≤380px) */
+@media (max-width: 380px) {
+  .banner h1 {
+    font-size: 26px;
+  }
+  .logo {
+    font-size: 22px;
+  }
 }
