@@ -1,3 +1,20 @@
+// --------------------- TYPING ANIMATION ---------------------
+function startTypingAnimation() {
+  const typingElement = document.querySelector('.typing-text');
+  if (typingElement) {
+    // Reset animation by removing and re-adding the element
+    const clone = typingElement.cloneNode(true);
+    typingElement.parentNode.replaceChild(clone, typingElement);
+  }
+}
+
+// Start animation when page loads
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startTypingAnimation);
+} else {
+  startTypingAnimation();
+}
+
 function gotopapers() {
   window.location.href = "papers.html";
 }
